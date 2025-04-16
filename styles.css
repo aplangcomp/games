@@ -208,7 +208,8 @@ body.privacy > div {
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
   }
 }
 
@@ -217,19 +218,13 @@ body.topics .heading {
 }
 
 body.topics {
-  background: url(./assets/squid-game-bg.webp);
+  background: url(./assets/squid-game-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-body.topics .overlay {
-  display: block;
-  width: 100vw;
-  height: calc(100vh + 20%);
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+
+body.topics .instructions {
+  order: 3;
 }
 
 .hidden {
@@ -253,6 +248,7 @@ body.topics .overlay {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  padding: 20px 0;
 }
 
 .roles,
@@ -261,4 +257,31 @@ body.topics .overlay {
   flex-direction: row;
   gap: 20px;
   max-width: 1200px;
+}
+.roles ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body.home .instructions ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (max-width: 768px) {
+  .roles,
+  .controls,
+  .frames {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .controls {
+    width: 50%;
+  }
+
+  .frames {
+    padding: 20px 0;
+  }
 }
