@@ -17,6 +17,7 @@
 
 body {
   background: black;
+  overflow-x: hidden;
 }
 
 * {
@@ -112,7 +113,7 @@ h2#demo {
   transition: all 0.3s;
   gap: 30px;
 }
-.btn::after {
+.btn:not(.no-ico)::after {
   content: url("./assets/bx-joystick.svg");
   height: 24px;
   width: 24px;
@@ -131,7 +132,7 @@ button.btn.clear {
 .hide {
   display: none;
 }
-button.btn::after {
+.btn.timer:not(.no-ico):after {
   content: url("./assets/bxs-hourglass.svg");
   height: 24px;
   width: 24px;
@@ -167,4 +168,97 @@ footer .legal-stuff {
   display: flex;
   gap: 20px;
   padding: 10px;
+}
+
+body.privacy > div {
+  padding: 0 20px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.squid-font {
+  font-family: "Squid";
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.grid div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid .btn {
+  width: min-content;
+}
+
+.topic {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+body.topics .heading {
+  padding: 50px 20px;
+}
+
+body.topics {
+  background: url(./assets/squid-game-bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body.topics .overlay {
+  display: block;
+  width: 100vw;
+  height: calc(100vh + 20%);
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hidden {
+  display: none;
+}
+
+.question-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-box p {
+  font-size: 20px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.frames {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.roles,
+.controls {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 1200px;
 }
